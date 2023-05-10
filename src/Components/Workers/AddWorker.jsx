@@ -8,6 +8,8 @@ const AddWorker = (props) => {
   const [error, setError] = useState();
   const nameInfoRef = useRef();
   const wageInputRef=useRef();
+  
+ 
 
   const minimumWage = 5000;
 
@@ -48,7 +50,7 @@ const AddWorker = (props) => {
 
   return (
     <Wrapper>
-      {error && <ErrorModal onConfirm={errorHandler} error={error} />}
+      {error && <ErrorModal onConfirm={errorHandler} error={error} setWorkers={props.setWorkers}/>}
       <Card className="mt-10">
         <form className="flex flex-col gap-y-2" onSubmit={addWorkerHandler}>
           <label htmlFor="name" className="font-medium ">
